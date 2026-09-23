@@ -10,7 +10,6 @@ readings = [
     {"name": "patio", "room": "outside", "temp": 29.8, "online": True},
 ]
 
-#task 2
 def average_temp(readings):
     total = 0
     for reading in readings:
@@ -21,7 +20,6 @@ def average_temp(readings):
 
 average_temp(readings)
 
-#task 3
 def hottest(readings):
     hottest_device = readings[0]
     for reading in readings:
