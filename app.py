@@ -39,3 +39,12 @@ def get_devices():
 @app.get("/devices/hottest")
 def get_hottest():
     return hottest(readings)
+
+#task 3
+@app.get("/devices/online")
+def get_online():
+    online_devices = []
+    for reading in readings:
+        if reading["online"]:
+            online_devices.append(reading)
+    return online_devices
