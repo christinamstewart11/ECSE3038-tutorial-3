@@ -29,3 +29,8 @@ def hottest(readings):
     return hottest_device
 
 hottest(readings)
+
+#task 1
+@app.get("/devices")
+def get_devices():
+    return readings
