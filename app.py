@@ -67,3 +67,14 @@ def get_stats():
 def create_device(device: dict):
     readings.append(device)
     return device
+
+#task 7
+@app.get("/rooms/{room}/devices")
+def get_room_devices(room: str):
+    room_devices = []
+    for reading in readings:
+        if reading["room"] == room:
+            room_devices.append(reading)
+    if not room_devices:
+        raise HTTPException(status_code=404, detail=f"No room called {room}")
+    return room_devices
