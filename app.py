@@ -56,3 +56,8 @@ def get_device(name: str):
         if reading["name"] == name:
             return reading
     raise HTTPException(status_code=404, detail=f"No device called {name}")
+
+#task 5
+@app.get("/stats")
+def get_stats():
+    return {"average_temperature": round(average_temp(readings), 2)} 
